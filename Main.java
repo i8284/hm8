@@ -10,22 +10,16 @@ public class Main {
         rotateColors();
 
     }
-
-
+    
     public static void rotateColors() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++){
                 colors[i][j] = random.nextInt(256);
             }
         }
-        System.out.println("Исходный матрица:");
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++){
-                System.out.format("%4d", colors[i][j]);
-            }
-            System.out.println();
-        }
+        System.out.println("Исходная матрица:");
 
+        displayMatrix(colors);
 
         System.out.println("Перевернутая матрица на 90 градусов:");
 
@@ -36,12 +30,18 @@ public class Main {
             }
         }
 
+        displayMatrix(rotatedColors);
+    }
+
+
+    public static void displayMatrix(int [][] matrix) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++){
-                System.out.format("%4d", rotatedColors[i][j]);
+                System.out.format("%4d", matrix[i][j]);
             }
             System.out.println();
         }
     }
+    
 
 }
